@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strive & Attune | Elite Software Development & Strategic Team Augmentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Favicon links -->
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg"> -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/fevicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/fevicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/fevicon/apple-touch-icon.png">
+    <link rel="manifest" href="/fevicon/site.webmanifest">
+    <meta name="theme-color" content="#1e293b">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --strive-color: #059669;
+            --attune-color: #3b82f6;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--strive-color), var(--attune-color));
+        }
+
+        h3 {
+            font-size: 1.6rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--strive-color), var(--attune-color));
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-center h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+
+        /* Geometric SA Logo Styles */
+        .geometric-sa-logo {
+            width: 45px;
+            height: 45px;
+            position: relative;
+            margin-right: 12px;
+        }
+
+        .s-geometric {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 25px;
+            height: 15px;
+            background-color: var(--strive-color);
+            border-radius: 7px 7px 0 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .a-geometric {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 25px;
+            height: 15px;
+            background-color: var(--attune-color);
+            border-radius: 7px 7px 7px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .connector {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 2px;
+            background: linear-gradient(to right, var(--strive-color) 0%, var(--attune-color) 100%);
+            border-radius: 1px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        .logo-text span.strive {
+            color: var(--strive-color);
+        }
+
+        .logo-text span.attune {
+            color: var(--attune-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Footer Logo */
+        .footer-geometric-sa-logo {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .footer-s-geometric {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 30px;
+            height: 18px;
+            background-color: var(--strive-color);
+            border-radius: 9px 9px 0 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-a-geometric {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 30px;
+            height: 18px;
+            background-color: var(--attune-color);
+            border-radius: 9px 9px 9px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-connector {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+            height: 3px;
+            background: linear-gradient(to right, var(--strive-color) 0%, var(--attune-color) 100%);
+            border-radius: 1.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 10rem 0 6rem;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Philosophy Section */
+        .philosophy-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .philosophy-card {
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .strive-card {
+            border-top: 5px solid var(--strive-color);
+        }
+
+        .attune-card {
+            border-top: 5px solid var(--attune-color);
+        }
+
+        .philosophy-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .strve-icon {
+            color: var(--strive-color);
+        }
+
+        .attune-icon {
+            color: var(--attune-color);
+        }
+
+        /* Services */
+        .services-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+        }
+
+        .tab-btn.active:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--strive-color), var(--attune-color));
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Expertise */
+        .expertise-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .category-card {
+            padding: 1.5rem;
+            background-color: var(--light);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .category-card h4 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .category-icon {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Process */
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: linear-gradient(to right, var(--strive-color), var(--attune-color));
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Stats */
+        .stats {
+            background: linear-gradient(rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.9)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .stats h2 {
+            color: white;
+        }
+
+        .stats h2:after {
+            background: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, var(--strive-color), var(--attune-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2rem;
+            background-color: var(--light);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        .contact-action {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        .footer-logo-text span.strive {
+            color: var(--strive-color);
+        }
+
+        .footer-logo-text span.attune {
+            color: var(--attune-color);
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .philosophy-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: white;
+                box-shadow: var(--shadow);
+                padding: 2rem;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 0 0 1.5rem 0;
+            }
+            
+            .hero {
+                padding: 8rem 0 4rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .geometric-sa-logo {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+            }
+            
+            .s-geometric {
+                width: 22px;
+                height: 13px;
+                font-size: 0.8rem;
+            }
+            
+            .a-geometric {
+                width: 22px;
+                height: 13px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 3rem 0;
+            }
+            
+            .hero {
+                padding: 7rem 0 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .logo-text {
+                font-size: 1.2rem;
+            }
+            
+            .geometric-sa-logo {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .s-geometric {
+                width: 20px;
+                height: 12px;
+                font-size: 0.7rem;
+            }
+            
+            .a-geometric {
+                width: 20px;
+                height: 12px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">
+                    <div class="geometric-sa-logo">
+                        <div class="s-geometric">S</div>
+                        <div class="a-geometric">A</div>
+                        <div class="connector"></div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="strive">Strive</span> & <span class="attune">Attune</span>
+                    </div>
+                </a>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#philosophy">Philosophy</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Your complete technical partner for elite software development and strategic team augmentation.</h1>
+            <p>We don't just deliver code or contractors—we deliver outcomes that transform your business.</p>
+            <a href="#contact" class="btn">Start a Conversation</a>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy">
+        <div class="container">
+            <div class="text-center">
+                <h2>The Strive & Attune Philosophy</h2>
+                <p>Our dual approach combines relentless excellence with deep understanding</p>
+            </div>
+            
+            <div class="philosophy-container">
+                <div class="philosophy-card strive-card">
+                    <div class="philosophy-icon">
+                        <i class="fas fa-bullseye strve-icon"></i>
+                    </div>
+                    <h3>Strive</h3>
+                    <p>Represents our relentless commitment to excellence in every technical engagement. We bring a proactive, high-effort approach that goes beyond simply meeting requirements—we anticipate challenges, optimize solutions, and deliver elite-quality execution that sets new standards for your technology initiatives.</p>
+                    <p>Our teams don't just complete tasks; they pursue perfection in code quality, system architecture, and user experience. Every line of code, every design decision, and every project milestone reflects our drive to exceed expectations.</p>
+                </div>
+                
+                <div class="philosophy-card attune-card">
+                    <div class="philosophy-icon">
+                        <i class="fas fa-ear-listen attune-icon"></i>
+                    </div>
+                    <h3>Attune</h3>
+                    <p>Represents our deep listening and empathetic approach to understanding your unique business context. We invest time to perfectly align with your organizational goals, company culture, and technical environment before proposing solutions.</p>
+                    <p>This isn't surface-level discovery—we immerse ourselves in your challenges, constraints, and aspirations. The result is technology partnerships that feel natural, integrated, and specifically calibrated to accelerate your success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="text-center">
+                <h2>Our Service Portfolio</h2>
+                <p>Two powerful models. One exceptional partner.</p>
+            </div>
+            
+            <div class="services-tabs">
+                <button class="tab-btn active" data-tab="contract">IT Contract Services</button>
+                <button class="tab-btn" data-tab="managed">Software Development & Maintenance</button>
+            </div>
+            
+            <div class="tab-content active" id="contract-tab">
+                <div class="text-center">
+                    <h3>Team Augmentation That Actually Works</h3>
+                    <p>This service is designed for businesses that need to scale internal capacity quickly, fill critical skills gaps, or bring in specialized expertise for specific projects.</p>
+                </div>
+                
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Speed & Agility</h4>
+                        <p>Deploy qualified candidates in days, not months. Our pre-vetted talent pool and streamlined processes allow you to meet critical project deadlines without compromising on quality.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h4>Specialized Expertise</h4>
+                        <p>Gain immediate access to niche skills—AI/ML, blockchain, advanced cybersecurity, cloud-native architectures—without the cost and time investment of permanent hiring.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Cost-Effectiveness</h4>
+                        <p>Avoid long-term overhead of salaries, benefits, training programs, and equipment. You pay only for the expertise you need, for exactly as long as you need it.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="managed-tab">
+                <div class="text-center">
+                    <h3>Managed Projects with Complete Accountability</h3>
+                    <p>This is our end-to-end, outcome-based solution for businesses that want to outsource entire projects, build new products from scratch, or ensure their critical applications receive professional management and support.</p>
+                </div>
+                
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h4>Full Accountability</h4>
+                        <p>We are your single point of contact and take complete accountability for delivering the final product on time, on budget, and to specification.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Access to Complete Teams</h4>
+                        <p>Instantly gain an entire, high-performing cross-functional team for less than the cost of hiring them individually.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Dramatically Reduced Risk</h4>
+                        <p>We manage the project complexity, the talent retention challenges, and the technical risks, freeing you to focus on core business strategy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise">
+        <div class="container">
+            <div class="text-center">
+                <h2>Our Technical Expertise</h2>
+                <p>Spanning your entire technology stack</p>
+            </div>
+            
+            <div class="expertise-categories">
+                <div class="category-card">
+                    <h4><i class="fas fa-code category-icon"></i> Software & Web Development</h4>
+                    <ul class="skill-list">
+                        <li>Full-Stack Developers</li>
+                        <li>Front-End Engineers (React, Vue, Angular)</li>
+                        <li>Back-End Engineers (Java, Python, .NET, Node.js)</li>
+                        <li>Mobile Developers (iOS/Android, React Native, Flutter)</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <h4><i class="fas fa-cloud category-icon"></i> Cloud & Infrastructure</h4>
+                    <ul class="skill-list">
+                        <li>Cloud Architects (AWS, Azure, GCP)</li>
+                        <li>DevOps Engineers & Site Reliability Engineers</li>
+                        <li>System Administrators (Linux, Windows)</li>
+                        <li>Container & Kubernetes Experts</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <h4><i class="fas fa-database category-icon"></i> Data & Analytics</h4>
+                    <ul class="skill-list">
+                        <li>Data Scientists & ML Engineers</li>
+                        <li>Data Engineers & ETL Specialists</li>
+                        <li>Business Intelligence Analysts</li>
+                        <li>Database Administrators (SQL, NoSQL)</li>
+                    </ul>
+                </div>
+                
+                <div class="category-card">
+                    <h4><i class="fas fa-shield-alt category-icon"></i> Cybersecurity</h4>
+                    <ul class="skill-list">
+                        <li>Security Analysts & SOC Engineers</li>
+                        <li>Penetration Testers & Ethical Hackers</li>
+                        <li>Compliance Specialists (GDPR, HIPAA, SOC 2)</li>
+                        <li>Security Architects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="text-center">
+                <h2>Our Development Process</h2>
+                <p>The complete software development lifecycle</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery & Strategy</h3>
+                    <p>We Attune to your goals through comprehensive analysis of business needs, market positioning, and user requirements.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design (UI/UX)</h3>
+                    <p>We design intuitive, user-centric interfaces and build high-fidelity prototypes validated against user research.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Development</h3>
+                    <p>Our teams Strive for code quality, writing clean, efficient, maintainable, and well-documented code using Agile methodologies.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Quality Assurance</h3>
+                    <p>We rigorously test applications for functionality, performance, security vulnerabilities, and cross-platform compatibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="text-center">
+                <h2>The Strive & Attune Advantage</h2>
+                <p>We're Different—and It Shows</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">~48hrs</div>
+                    <h4>Targeted Project Kick-off</h4>
+                    <p>From initial concept to dedicated team engagement</p>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <h4>Commitment to Client Success</h4>
+                    <p>Partner with you until your strategic objectives are fully realized</p>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <h4>Critical Tech Capabilities</h4>
+                    <p>Specialized expertise in key areas like AI, Cloud, Data, and Product Development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2>Let's Start the Conversation</h2>
+                <p>Contact us today to explore how Strive & Attune can accelerate your technology initiatives</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>contactus@striveandattune.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+91 911111111</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h4>Visit Our Website</h4>
+                            <p>www.striveandattune.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Our Office</h4>
+                            <p>137P Lahari Enclave, Ushodaya Colony, Gajularamaram<br>Hyderabad, Telangana, India, 500055</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p>"The best technology partnerships feel invisible—the solutions just work, the teams just integrate, and the results just happen. That's what we Strive to deliver, by staying perfectly Attuned to what you really need."</p>
+                    </div>
+                    
+                    <div class="contact-action">
+                        <a href="mailto:contactus@striveandattune.com" class="btn">
+                            <i class="fas fa-paper-plane"></i> Email Us Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">
+                        <div class="footer-geometric-sa-logo">
+                            <div class="footer-s-geometric">S</div>
+                            <div class="footer-a-geometric">A</div>
+                            <div class="footer-connector"></div>
+                        </div>
+                        <div class="footer-logo-text">
+                            <span class="strive">Strive</span> & <span class="attune">Attune</span>
+                        </div>
+                    </div>
+                    <p>Your complete technical partner for elite software development and strategic team augmentation.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#philosophy">Philosophy</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#expertise">Expertise</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 137P Lahari Enclave, Ushodaya Colony, Gajularamaram, Hyderabad, Telangana, India, 500055</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> +91 911111111</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> contactus@striveandattune.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Strive & Attune. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Service tabs functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = 'var(--shadow)';
+            }
+        });
+    </script>
+</body>
+</html>
